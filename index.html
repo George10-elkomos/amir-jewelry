@@ -79,14 +79,52 @@
   }
   .rule.center{margin:0 auto;background:linear-gradient(90deg, transparent, var(--gold), transparent);}
 
+  /* ---------- TOP BAR ---------- */
+  .topbar{
+    position:fixed;top:0;left:0;right:0;z-index:1001;
+    background:#050403;
+    border-bottom:1px solid var(--hair);
+    height:42px;
+    display:flex;align-items:center;
+    transition:transform .45s ease, opacity .4s ease;
+  }
+  .topbar.hidden{transform:translateY(-100%);opacity:0;pointer-events:none;}
+  .topbar-inner{
+    max-width:1240px;margin:0 auto;padding:0 32px;
+    width:100%;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:20px;
+  }
+  .topbar-left, .topbar-right{
+    display:flex;align-items:center;gap:22px;
+    overflow-x:auto;scrollbar-width:none;
+  }
+  .topbar-left::-webkit-scrollbar, .topbar-right::-webkit-scrollbar{display:none;}
+  .topbar a{
+    display:flex;align-items:center;gap:7px;
+    font-size:12px;letter-spacing:0.03em;color:var(--ivory-dim);
+    white-space:nowrap;flex-shrink:0;
+    transition:color .3s ease;
+  }
+  .topbar a:hover{color:var(--gold-bright);}
+  .topbar a svg{width:13px;height:13px;color:var(--gold);flex-shrink:0;}
+  .topbar-divider{width:1px;height:14px;background:var(--hair);flex-shrink:0;}
+  .topbar-txt{display:inline;}
+  @media (max-width:980px){
+    .topbar-txt{display:none;}
+    .topbar-left, .topbar-right{gap:16px;}
+    .topbar-inner{padding:0 20px;gap:10px;}
+  }
+
   /* ---------- NAVBAR ---------- */
   header{
-    position:fixed;top:0;left:0;right:0;z-index:1000;
+    position:fixed;top:42px;left:0;right:0;z-index:1000;
     padding:22px 0;
     background:transparent;
     border-bottom:1px solid transparent;
-    transition:background .5s ease, border-color .5s ease, padding .4s ease, backdrop-filter .5s ease;
+    transition:background .5s ease, border-color .5s ease, padding .4s ease, backdrop-filter .5s ease, top .4s ease;
   }
+  header.scrolled{top:0;}
   header.scrolled{
     background:rgba(5,5,5,0.88);
     backdrop-filter:blur(14px);
@@ -167,7 +205,7 @@
   .hero{
     position:relative;min-height:100svh;
     display:flex;align-items:center;justify-content:center;
-    text-align:center;padding:140px 24px 80px;
+    text-align:center;padding:180px 24px 80px;
     background:
       radial-gradient(ellipse 900px 560px at 50% 8%, rgba(201,169,97,0.14), transparent 60%),
       radial-gradient(ellipse 700px 500px at 12% 92%, rgba(201,169,97,0.08), transparent 60%),
@@ -203,7 +241,7 @@
     font-size:clamp(46px,8vw,92px);
     letter-spacing:0.05em;
     line-height:1;
-    color:var(--ivory);
+    color:var(--gold);
     opacity:0;animation:heroFade 1s ease .35s forwards;
   }
   .hero h1 em{
@@ -557,7 +595,7 @@
     .wrap{padding:0 20px;}
     .nav-inner{padding:0 20px;}
     section{padding:90px 0;}
-    .hero{padding:120px 20px 70px;}
+    .hero{padding:150px 20px 70px;}
     .hero-shortcuts{gap:16px;}
     .coll-grid{grid-template-columns:1fr;}
     .why-grid{grid-template-columns:1fr;}
@@ -571,6 +609,42 @@
 </style>
 </head>
 <body>
+
+<!-- ================= TOP BAR ================= -->
+<div class="topbar" id="topBar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <a href="tel:01208236356" aria-label="Call mobile 01208236356">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z"/></svg>
+        <span class="topbar-txt">01208236356</span>
+      </a>
+      <a href="tel:0237499985" aria-label="Call landline 0237499985">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6a2 2 0 0 1 2-2h2l2 5-2 1a8 8 0 0 0 6 6l1-2 5 2v2a2 2 0 0 1-2 2A14 14 0 0 1 4 6Z"/></svg>
+        <span class="topbar-txt">0237499985</span>
+      </a>
+      <a href="https://maps.app.goo.gl/Jom3mMkqWYJa2ef9A" target="_blank" rel="noopener" aria-label="Location: Dokki, Cairo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.4 7-11.5A7 7 0 0 0 5 9.5C5 14.6 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
+        <span class="topbar-txt">Dokki, Cairo</span>
+      </a>
+    </div>
+    <div class="topbar-right">
+      <a href="https://www.facebook.com/share/1BgTDtrrQ3/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9h3V6h-3a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h3l1-3h-4v-2a1 1 0 0 1 1-1Z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/amirjewelry2026?igsi=MWRsbnFzbDc1MDR4dQ==" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.9" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@amir.jewelry5?_r=1&_t=ZS-99QWDLQH795" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 4v10.5a3.5 3.5 0 1 1-3-3.46"/><path d="M14 4c.4 2.2 2 3.8 4 4.2"/></svg>
+      </a>
+      <span class="topbar-divider"></span>
+      <a href="https://wa.me/qr/WBVLVDVZNCDRI1" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.4-4.1A8 8 0 1 1 9 18.3L4 20Z"/></svg>
+        <span class="topbar-txt">WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- ================= NAVBAR ================= -->
 <header id="siteHeader">
@@ -657,6 +731,10 @@
         <span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z"/></svg></span>
         <span>Call</span>
       </a>
+      <a class="shortcut" href="tel:0237499985">
+        <span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6a2 2 0 0 1 2-2h2l2 5-2 1a8 8 0 0 0 6 6l1-2 5 2v2a2 2 0 0 1-2 2A14 14 0 0 1 4 6Z"/></svg></span>
+        <span>Landline</span>
+      </a>
       <a class="shortcut" href="https://maps.app.goo.gl/Jom3mMkqWYJa2ef9A" target="_blank" rel="noopener">
         <span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.4 7-11.5A7 7 0 0 0 5 9.5C5 14.6 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>
         <span>Location</span>
@@ -664,6 +742,14 @@
       <a class="shortcut" href="https://www.instagram.com/amirjewelry2026?igsi=MWRsbnFzbDc1MDR4dQ==" target="_blank" rel="noopener">
         <span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.9" fill="currentColor" stroke="none"/></svg></span>
         <span>Instagram</span>
+      </a>
+      <a class="shortcut" href="https://www.facebook.com/share/1BgTDtrrQ3/?mibextid=wwXIfr" target="_blank" rel="noopener">
+        <span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 9h3V6h-3a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h3l1-3h-4v-2a1 1 0 0 1 1-1Z"/></svg></span>
+        <span>Facebook</span>
+      </a>
+      <a class="shortcut" href="https://www.tiktok.com/@amir.jewelry5?_r=1&_t=ZS-99QWDLQH795" target="_blank" rel="noopener">
+        <span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 4v10.5a3.5 3.5 0 1 1-3-3.46"/><path d="M14 4c.4 2.2 2 3.8 4 4.2"/></svg></span>
+        <span>TikTok</span>
       </a>
     </div>
   </div>
@@ -1005,11 +1091,17 @@
 </div>
 
 <script>
-  // Sticky header
+  // Sticky header + top bar
   const header = document.getElementById('siteHeader');
+  const topBar = document.getElementById('topBar');
   const onScroll = () => {
-    if(window.scrollY > 40){ header.classList.add('scrolled'); }
-    else{ header.classList.remove('scrolled'); }
+    if(window.scrollY > 40){
+      header.classList.add('scrolled');
+      topBar.classList.add('hidden');
+    } else {
+      header.classList.remove('scrolled');
+      topBar.classList.remove('hidden');
+    }
   };
   document.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
