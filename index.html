@@ -163,13 +163,12 @@
 
   .nav-actions{display:flex;align-items:center;gap:18px;}
   .icon-btn{
-    width:38px;height:38px;border-radius:50%;
+    width:46px;height:46px;border-radius:12px;
     display:flex;align-items:center;justify-content:center;
-    border:1px solid var(--hair);color:var(--gold);
-    transition:border-color .3s ease, color .3s ease, transform .3s ease;
+    transition:transform .3s ease, filter .3s ease;
   }
-  .icon-btn:hover{border-color:var(--gold);color:var(--gold-bright);transform:translateY(-2px);}
-  .icon-btn svg{width:16px;height:16px;}
+  .icon-btn:hover{transform:translateY(-2px);filter:brightness(1.1);}
+  .icon-btn svg{width:40px;height:40px;display:block;}
 
   .hamburger{
     display:none;
@@ -294,19 +293,14 @@
     color:var(--ivory-dim);
   }
   .shortcut .circ{
-    width:74px;height:74px;border-radius:50%;
-    border:1.5px solid var(--hair);
-    background:rgba(201,169,97,0.07);
+    width:78px;height:78px;border-radius:18px;
     display:flex;align-items:center;justify-content:center;
-    color:var(--gold);
     transition:all .35s ease;
   }
-  .shortcut .circ svg{width:28px;height:28px;}
+  .shortcut .circ svg{width:66px;height:66px;}
   .shortcut span{font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;}
   .shortcut:hover .circ{
-    border-color:var(--gold);color:var(--gold-bright);
-    background:rgba(201,169,97,0.14);
-    box-shadow:0 0 28px -4px rgba(201,169,97,0.6);
+    filter:brightness(1.1);
     transform:translateY(-4px) scale(1.06);
   }
 
@@ -553,20 +547,20 @@
   .floating{position:fixed;right:22px;bottom:24px;z-index:900;display:flex;flex-direction:column;gap:14px;align-items:flex-end;}
   .fab{
     display:flex;align-items:center;gap:10px;
-    height:56px;border-radius:999px;
+    height:64px;border-radius:999px;
     background:linear-gradient(135deg, var(--gold-bright), var(--gold) 55%, var(--gold-dark));
     color:#0b0a08;padding:0 18px;
     box-shadow:0 10px 26px -8px rgba(0,0,0,0.55);
     transition:transform .3s ease, box-shadow .3s ease;
   }
   .fab:hover{transform:translateY(-3px);box-shadow:0 14px 30px -8px rgba(201,169,97,0.55);}
-  .fab svg{width:24px;height:24px;flex-shrink:0;}
+  .fab svg{width:34px;height:34px;flex-shrink:0;}
   .fab-label{font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;white-space:nowrap;}
   .fab.call{
     background:var(--black-soft);color:var(--gold);
-    border:1px solid var(--gold);width:56px;justify-content:center;padding:0;
+    border:1px solid var(--gold);width:64px;justify-content:center;padding:0;
   }
-  .fab.whatsapp{width:56px;justify-content:center;padding:0;position:relative;}
+  .fab.whatsapp{width:64px;justify-content:center;padding:0;position:relative;}
   .fab.whatsapp::after{
     content:'';position:absolute;inset:0;border-radius:999px;
     border:1px solid var(--gold);
@@ -599,8 +593,8 @@
     section{padding:90px 0;}
     .hero{padding:150px 20px 70px;}
     .hero-shortcuts{gap:22px;}
-    .shortcut .circ{width:64px;height:64px;}
-    .shortcut .circ svg{width:24px;height:24px;}
+    .shortcut .circ{width:62px;height:62px;}
+    .shortcut .circ svg{width:52px;height:52px;}
     .coll-grid{grid-template-columns:1fr;}
     .why-grid{grid-template-columns:1fr;}
     .social-grid{grid-template-columns:repeat(2,1fr);}
@@ -666,12 +660,6 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-actions">
-      <a class="icon-btn" href="https://wa.me/qr/WBVLVDVZNCDRI1" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l1.4-4.1A8 8 0 1 1 9 18.3L4 20Z"/><path d="M8.5 9.8c.3 2.4 2.3 4.4 4.7 4.7" stroke-linecap="round"/></svg>
-      </a>
-      <a class="icon-btn" href="tel:01208236356" aria-label="Call AMIR JEWELRY">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z"/></svg>
-      </a>
       <button class="hamburger" id="menuOpen" aria-label="Open menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
       </button>
@@ -695,19 +683,6 @@
     <a href="#location" class="m-link">Location</a>
     <a href="#contact" class="m-link">Contact</a>
   </nav>
-  <div class="mobile-shortcuts">
-    <a class="icon-btn" href="https://wa.me/qr/WBVLVDVZNCDRI1" target="_blank" rel="noopener" aria-label="WhatsApp">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l1.4-4.1A8 8 0 1 1 9 18.3L4 20Z"/></svg>
-    </a>
-    <a class="icon-btn" href="tel:01208236356" aria-label="Call">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z"/></svg>
-    </a>
-    <a class="icon-btn" href="https://maps.app.goo.gl/Jom3mMkqWYJa2ef9A" target="_blank" rel="noopener" aria-label="Location">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.4 7-11.5A7 7 0 0 0 5 9.5C5 14.6 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
-    </a>
-    <a class="icon-btn" href="https://www.instagram.com/amirjewelry2026?igsi=MWRsbnFzbDc1MDR4dQ==" target="_blank" rel="noopener" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.9" fill="currentColor" stroke="none"/></svg>
-    </a>
   </div>
 </div>
 
@@ -728,31 +703,35 @@
     </div>
     <div class="hero-shortcuts">
       <a class="shortcut" href="https://wa.me/qr/WBVLVDVZNCDRI1" target="_blank" rel="noopener">
-        <span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l1.4-4.1A8 8 0 1 1 9 18.3L4 20Z"/><path d="M8.5 9.8c.3 2.4 2.3 4.4 4.7 4.7" stroke-linecap="round"/></svg></span>
+        <span class="circ"><svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="24" fill="#25D366"/><path d="M31 27.5c-.35-.2-2.1-1.05-2.4-1.15-.3-.1-.55-.15-.8.15-.25.3-.9 1.15-1.1 1.4-.2.25-.4.25-.75.1-2-1-3.3-1.8-4.65-4.05-.35-.6.35-.55 1-1.85.1-.25.05-.4-.02-.55-.1-.15-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.25 0-.6.1-.9.4-.3.3-1.2 1.15-1.2 2.85s1.2 3.3 1.4 3.55c.2.25 2.4 3.75 5.9 5.1 3.5 1.35 3.5.9 4.15.85.65-.05 2.1-.85 2.4-1.7.3-.85.3-1.55.2-1.7-.1-.15-.35-.25-.7-.4z" fill="#fff"/></svg></span>
         <span>WhatsApp</span>
       </a>
       <a class="shortcut" href="tel:01208236356">
-        <span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z"/></svg></span>
+        <span class="circ"><svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="14" fill="#25D366"/><path d="M17 14c1 0 2 0 2.5 1l2 4c.3.6.2 1.3-.3 1.8L19 23c1.5 3 4 5.5 7 7l2.2-2.2c.5-.5 1.2-.6 1.8-.3l4 2c1 .5 1 1.5 1 2.5 0 3-2.5 5-5 5C21 37 11 27 11 18c0-2.5 2-4 4-4z" fill="#fff"/></svg></span>
         <span>Call</span>
       </a>
       <a class="shortcut" href="tel:0237499985">
-        <span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6a2 2 0 0 1 2-2h2l2 5-2 1a8 8 0 0 0 6 6l1-2 5 2v2a2 2 0 0 1-2 2A14 14 0 0 1 4 6Z"/></svg></span>
+        <span class="circ"><svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="14" fill="#3B7DD8"/><path d="M17 14c1 0 2 0 2.5 1l2 4c.3.6.2 1.3-.3 1.8L19 23c1.5 3 4 5.5 7 7l2.2-2.2c.5-.5 1.2-.6 1.8-.3l4 2c1 .5 1 1.5 1 2.5 0 3-2.5 5-5 5C21 37 11 27 11 18c0-2.5 2-4 4-4z" fill="#fff"/></svg></span>
         <span>Landline</span>
       </a>
       <a class="shortcut" href="https://maps.app.goo.gl/Jom3mMkqWYJa2ef9A" target="_blank" rel="noopener">
-        <span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.4 7-11.5A7 7 0 0 0 5 9.5C5 14.6 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>
+        <span class="circ"><svg viewBox="0 0 48 48" width="48" height="48"><path d="M24 4C15.7 4 9 10.7 9 19c0 10.5 13 23 14.3 24.2a1 1 0 0 0 1.4 0C26 42 39 29.5 39 19c0-8.3-6.7-15-15-15z" fill="#EA4335"/><path d="M24 4C15.7 4 9 10.7 9 19c0 3.4 1.1 6.6 3.3 10L24 15.5V4z" fill="#4285F4"/><path d="M24 4v11.5l11.7 13.5C37.9 25.6 39 22.4 39 19c0-8.3-6.7-15-15-15z" fill="#FBBC04"/><path d="M12.3 29c2.9 4.5 6.9 8.9 10 14.2a1 1 0 0 0 1.4 0c1.3-1.7 2.9-3.5 4.6-5.4L12.3 29z" fill="#34A853"/><circle cx="24" cy="19" r="6.3" fill="#fff"/></svg></span>
         <span>Location</span>
       </a>
+      <a class="shortcut" href="https://ipn.eg/S/amir.twadros/instapay/6Q40fA" target="_blank" rel="noopener">
+        <span class="circ"><svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="14" fill="#3E1F73"/><path d="M13 34 23 24 13 14" stroke="#fff" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 34 34 24 24 14" stroke="#F2B705" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>InstaPay</span>
+      </a>
       <a class="shortcut" href="https://www.instagram.com/amirjewelry2026?igsi=MWRsbnFzbDc1MDR4dQ==" target="_blank" rel="noopener">
-        <span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.9" fill="currentColor" stroke="none"/></svg></span>
+        <span class="circ"><svg viewBox="0 0 48 48" width="48" height="48"><defs><linearGradient id="igGradHero" x1="0" y1="48" x2="48" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".25" stop-color="#FA7E1E"/><stop offset=".5" stop-color="#D62976"/><stop offset=".75" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect width="48" height="48" rx="14" fill="url(#igGradHero)"/><rect x="12" y="12" width="24" height="24" rx="7" fill="none" stroke="#fff" stroke-width="2.6"/><circle cx="24" cy="24" r="6.5" fill="none" stroke="#fff" stroke-width="2.6"/><circle cx="33" cy="15" r="1.8" fill="#fff"/></svg></span>
         <span>Instagram</span>
       </a>
       <a class="shortcut" href="https://www.facebook.com/share/1BgTDtrrQ3/?mibextid=wwXIfr" target="_blank" rel="noopener">
-        <span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 9h3V6h-3a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h3l1-3h-4v-2a1 1 0 0 1 1-1Z"/></svg></span>
+        <span class="circ"><svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="14" fill="#1877F2"/><path d="M27 16h4v-6h-4c-4 0-6.5 2.7-6.5 6.3V20h-4v6h4v12h6.3V26h4.2l.8-6h-5V17c0-.6.4-1 1.2-1z" fill="#fff"/></svg></span>
         <span>Facebook</span>
       </a>
       <a class="shortcut" href="https://www.tiktok.com/@amir.jewelry5?_r=1&_t=ZS-99QWDLQH795" target="_blank" rel="noopener">
-        <span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 4v10.5a3.5 3.5 0 1 1-3-3.46"/><path d="M14 4c.4 2.2 2 3.8 4 4.2"/></svg></span>
+        <span class="circ"><svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="14" fill="#010101"/><path d="M29 12.3c1 3.1 3.1 5.3 6.4 5.6v4.6c-2.3 0-4.5-.7-6.4-2v9.6c0 5.2-4.2 9.4-9.4 9.4s-9.4-4.2-9.4-9.4 4.2-9.4 9.4-9.4c.5 0 1 .05 1.4.13v4.7a4.7 4.7 0 1 0 3.5 4.6V12.3z" fill="#25F4EE"/><path d="M27.7 11.3c1 3.1 3.1 5.3 6.4 5.6v4.6c-2.3 0-4.5-.7-6.4-2v9.6c0 5.2-4.2 9.4-9.4 9.4s-9.4-4.2-9.4-9.4 4.2-9.4 9.4-9.4c.5 0 1 .05 1.4.13v4.7a4.7 4.7 0 1 0 3.5 4.6V11.3z" fill="#FE2C55"/><path d="M28.3 11.8c1 3.1 3.1 5.3 6.4 5.6v4.6c-2.3 0-4.5-.7-6.4-2v9.6c0 5.2-4.2 9.4-9.4 9.4s-9.4-4.2-9.4-9.4 4.2-9.4 9.4-9.4c.5 0 1 .05 1.4.13v4.7a4.7 4.7 0 1 0 3.5 4.6V11.8z" fill="#fff"/></svg></span>
         <span>TikTok</span>
       </a>
     </div>
@@ -1053,11 +1032,11 @@
         <p>"Your Trusted Destination for Gold, Elegance, and Investment."</p>
         <p style="margin-top:18px;">Dokki – 6 El Mahalwy Street from Soliman Gohar</p>
         <div class="footer-social">
-          <a class="icon-btn" href="https://www.instagram.com/amirjewelry2026?igsi=MWRsbnFzbDc1MDR4dQ==" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
-          <a class="icon-btn" href="https://www.facebook.com/share/1BgTDtrrQ3/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 9h3V6h-3a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h3l1-3h-4v-2a1 1 0 0 1 1-1Z"/></svg></a>
-          <a class="icon-btn" href="https://www.tiktok.com/@amir.jewelry5?_r=1&_t=ZS-99QWDLQH795" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 4v10.5a3.5 3.5 0 1 1-3-3.46"/><path d="M14 4c.4 2.2 2 3.8 4 4.2"/></svg></a>
-          <a class="icon-btn" href="https://wa.me/qr/WBVLVDVZNCDRI1" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l1.4-4.1A8 8 0 1 1 9 18.3L4 20Z"/></svg></a>
-          <a class="icon-btn" href="https://maps.app.goo.gl/Jom3mMkqWYJa2ef9A" target="_blank" rel="noopener" aria-label="Google Maps"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.4 7-11.5A7 7 0 0 0 5 9.5C5 14.6 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></a>
+          <a class="icon-btn" href="https://www.instagram.com/amirjewelry2026?igsi=MWRsbnFzbDc1MDR4dQ==" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 48 48" width="48" height="48"><defs><linearGradient id="igGradFooter" x1="0" y1="48" x2="48" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".25" stop-color="#FA7E1E"/><stop offset=".5" stop-color="#D62976"/><stop offset=".75" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect width="48" height="48" rx="14" fill="url(#igGradFooter)"/><rect x="12" y="12" width="24" height="24" rx="7" fill="none" stroke="#fff" stroke-width="2.6"/><circle cx="24" cy="24" r="6.5" fill="none" stroke="#fff" stroke-width="2.6"/><circle cx="33" cy="15" r="1.8" fill="#fff"/></svg></a>
+          <a class="icon-btn" href="https://www.facebook.com/share/1BgTDtrrQ3/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="14" fill="#1877F2"/><path d="M27 16h4v-6h-4c-4 0-6.5 2.7-6.5 6.3V20h-4v6h4v12h6.3V26h4.2l.8-6h-5V17c0-.6.4-1 1.2-1z" fill="#fff"/></svg></a>
+          <a class="icon-btn" href="https://www.tiktok.com/@amir.jewelry5?_r=1&_t=ZS-99QWDLQH795" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="14" fill="#010101"/><path d="M29 12.3c1 3.1 3.1 5.3 6.4 5.6v4.6c-2.3 0-4.5-.7-6.4-2v9.6c0 5.2-4.2 9.4-9.4 9.4s-9.4-4.2-9.4-9.4 4.2-9.4 9.4-9.4c.5 0 1 .05 1.4.13v4.7a4.7 4.7 0 1 0 3.5 4.6V12.3z" fill="#25F4EE"/><path d="M27.7 11.3c1 3.1 3.1 5.3 6.4 5.6v4.6c-2.3 0-4.5-.7-6.4-2v9.6c0 5.2-4.2 9.4-9.4 9.4s-9.4-4.2-9.4-9.4 4.2-9.4 9.4-9.4c.5 0 1 .05 1.4.13v4.7a4.7 4.7 0 1 0 3.5 4.6V11.3z" fill="#FE2C55"/><path d="M28.3 11.8c1 3.1 3.1 5.3 6.4 5.6v4.6c-2.3 0-4.5-.7-6.4-2v9.6c0 5.2-4.2 9.4-9.4 9.4s-9.4-4.2-9.4-9.4 4.2-9.4 9.4-9.4c.5 0 1 .05 1.4.13v4.7a4.7 4.7 0 1 0 3.5 4.6V11.8z" fill="#fff"/></svg></a>
+          <a class="icon-btn" href="https://wa.me/qr/WBVLVDVZNCDRI1" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="24" fill="#25D366"/><path d="M31 27.5c-.35-.2-2.1-1.05-2.4-1.15-.3-.1-.55-.15-.8.15-.25.3-.9 1.15-1.1 1.4-.2.25-.4.25-.75.1-2-1-3.3-1.8-4.65-4.05-.35-.6.35-.55 1-1.85.1-.25.05-.4-.02-.55-.1-.15-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.25 0-.6.1-.9.4-.3.3-1.2 1.15-1.2 2.85s1.2 3.3 1.4 3.55c.2.25 2.4 3.75 5.9 5.1 3.5 1.35 3.5.9 4.15.85.65-.05 2.1-.85 2.4-1.7.3-.85.3-1.55.2-1.7-.1-.15-.35-.25-.7-.4z" fill="#fff"/></svg></a>
+          <a class="icon-btn" href="https://maps.app.goo.gl/Jom3mMkqWYJa2ef9A" target="_blank" rel="noopener" aria-label="Google Maps"><svg viewBox="0 0 48 48" width="48" height="48"><path d="M24 4C15.7 4 9 10.7 9 19c0 10.5 13 23 14.3 24.2a1 1 0 0 0 1.4 0C26 42 39 29.5 39 19c0-8.3-6.7-15-15-15z" fill="#EA4335"/><path d="M24 4C15.7 4 9 10.7 9 19c0 3.4 1.1 6.6 3.3 10L24 15.5V4z" fill="#4285F4"/><path d="M24 4v11.5l11.7 13.5C37.9 25.6 39 22.4 39 19c0-8.3-6.7-15-15-15z" fill="#FBBC04"/><path d="M12.3 29c2.9 4.5 6.9 8.9 10 14.2a1 1 0 0 0 1.4 0c1.3-1.7 2.9-3.5 4.6-5.4L12.3 29z" fill="#34A853"/><circle cx="24" cy="19" r="6.3" fill="#fff"/></svg></a>
         </div>
       </div>
       <div class="footer-col">
@@ -1082,17 +1061,6 @@
     </div>
   </div>
 </footer>
-
-<!-- ================= FLOATING BUTTONS ================= -->
-<div class="floating">
-  <a class="fab call" href="tel:01208236356" aria-label="Call AMIR JEWELRY">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z"/></svg>
-  </a>
-  <a class="fab whatsapp" href="https://wa.me/qr/WBVLVDVZNCDRI1" target="_blank" rel="noopener" aria-label="Chat with AMIR JEWELRY on WhatsApp">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.4-4.1A8 8 0 1 1 9 18.3L4 20Z"/></svg>
-    <span class="fab-label">Chat With Us</span>
-  </a>
-</div>
 
 <script>
   // Sticky header + top bar
